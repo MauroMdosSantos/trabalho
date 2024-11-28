@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projeto de GitHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        button:hover {
+            background-color: #005f6b;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #777;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Meu Site!</h1>
+    </header>
+    <main>
+        <p>Este é um exemplo simples de um site criado rapidamente com HTML, CSS e JavaScript no GitHub Pages.</p>
+        <button id="alertButton">Clique aqui!</button>
+    </main>
+    <footer>
+        <p>Feito com ♥ para o professor.</p>
+    </footer>
+
+    <script>
+        document.getElementById('alertButton').addEventListener('click', function() {
+            alert('Obrigado por visitar o meu site!');
+        });
+    </script>
+</body>
+</html>
