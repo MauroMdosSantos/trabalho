@@ -1,0 +1,50 @@
+let x, y;
+
+function setup() {
+  createCanvas(600, 400);
+  x = random(width);
+  y = random(height);
+  noLoop(); // Desenha só uma vez (remoção opcional se quiser animação contínua)
+}
+
+function draw() {
+  background(30);
+
+  // Calcula distância entre o círculo e o mouse
+  let d = dist(mouseX, mouseY, x, y);
+
+  // Se estiver perto, o círculo tenta fugir
+  if (d < 100) {
+    let dx = x - mouseX;
+    let dy = y - mouseY;
+
+    // Normaliza a direção e ajusta a posição
+    let magnitude = sqrt(dx * dx + dy * dy);
+    if (magnitude > 0) {
+      dx = dx / magnitude;
+      dy = dy / magnitude;
+    }
+
+    x += dx * 20;
+    y += dy * 20;
+
+    // Restringe a posição para não sair da tela
+    x = constrain(x, 20, width - 20);
+    y = constrain(y, 20, height - 20);
+  }
+
+  // Desenha o círculo
+  fill(0, 200, 255);
+  noStroke();
+  circle(x, y, 40);
+
+  // Desenha o ponteiro do mouse como referência
+  fill(255, 50);
+  circle(mouseX, mouseY, 20);
+}
+
+function mouseMoved() {
+  loop();   // Redesenha quando o mouse se move
+  redraw();
+  noLoop(); // Para novamente
+}
